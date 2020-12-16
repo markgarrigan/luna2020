@@ -143,7 +143,7 @@ export default class extends Controller {
 
     // Create an instance of the Stripe object with your publishable API key
     var stripe = Stripe(stripePubKey);
-    fetch('/.netlify/functions/checkout/start', {
+    fetch('/.netlify/functions/checkout-start', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

@@ -16,7 +16,7 @@ export default class extends Controller {
     var session_id = getUrlParameter('session_id')
     if (session_id) {
       window.localStorage.removeItem('lunaBasket')
-      fetch('/.netlify/functions/checkout/session', {
+      fetch('/.netlify/functions/checkout-session', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
