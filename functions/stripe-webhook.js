@@ -1,5 +1,5 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-const db = require('../../helpers/db.js')
+const db = require('../helpers/db.js')
 
 exports.handler = async function ({ body, headers }) {
   try {
