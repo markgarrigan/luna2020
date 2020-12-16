@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--gelo /_head.html -->
+  <title>Shopping Basket - Luna Cafe</title>
+  <meta name="description" content="">
+  <script src="/static/js/basket.js" defer></script>
+  <script src="/static/js/totals.js" defer></script>
+</head>
+
+<body class="basket moonpie" data-controller="store">
+  <!--gelo /_nav.html-->
+  <div>
+    <div class="promo">
+      FREE shipping on orders over $100.
+    </div>
+    <div class="announce">
+      FREE Local Delivery to De Pere and Green Bay!
+    </div>
+
+    <header>
+      <div>
+        <h1>Reveiw your basket</h1>
+        <p>or <a href="/categories">continue shopping</a>.</p>
+      </div>
+      <div class="checkout" data-target="store.checkout">
+        <a class="btn" href="/checkout/fulfillment">Check Out</a>
+      </div>
+    </header>
+
+    <main data-controller="basket">
+      <h3 class="show" data-target="basket.wait">Just a second <span>while we load your items</span></h3>
+      <h3 data-target="basket.empty">Nothing to show <span>start shopping and fill it up!</span></h3>
+    </main>
+    <aside data-controller="totals" data-target="totals.checkout">
+      <div class="details">
+        <h4>
+          <span>Subtotal</span>
+          <span data-target="totals.sub"></span>
+        </h4>
+        <h4>
+          <span>Shipping</span>
+          <span data-target="totals.shipping"></span>
+        </h4>
+        <h4>
+          <span>Estimated Tax <i>?</i></span>
+          <span>$5.00</span>
+        </h4>
+        <hr>
+        <h3>
+          <span>Total</span>
+          <span data-target="totals.total"></span>
+        </h3>
+      </div>
+      <div class="checkout">
+        <a class="btn" href="/checkout/fulfillment">Check Out</a>
+      </div>
+    </aside>
+  </div>
+  <!--gelo /_footer.html-->

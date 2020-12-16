@@ -1,0 +1,38 @@
+.arrow {
+    display: inline-block;
+    width: .8rem;
+    height: .8rem;
+    background: transparent;
+    text-indent: -9999px;
+    border-top: 1px solid rgba(0,0,0,.8);
+    border-left: 1px solid rgba(0,0,0,.8);
+    transition: all 250ms ease-in-out;
+    text-decoration: none;
+    color: transparent;
+  }
+  
+  .arrow:before {
+    display: block;
+    height: 200%;
+    width: 200%;
+    margin-left: -50%;
+    margin-top: -50%;
+    content: "";
+    transform: rotate(45deg);
+  }
+  
+  .arrow.prev {
+    transform: rotate(-45deg);
+  }
+  
+  .arrow.next {
+    transform: rotate(135deg);
+  }
+  
+  .arrow.up {
+    transform: rotate(45deg);
+  }
+  
+  .arrow.down {
+    transform: rotate(-135deg) translate(4px, 0);
+  }

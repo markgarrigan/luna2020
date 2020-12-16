@@ -1,0 +1,128 @@
+.product {
+  main {
+    padding: 2rem 0;
+    max-width: 100vw;
+
+    .crumbs {
+      padding: 0 2rem;
+      font-size: 0.8rem;
+      margin-bottom: 1.2rem;
+      display: none;
+    }
+
+    h1,
+    h2 {
+      padding: 0 2rem;
+      &:empty {
+        opacity: 1;
+        @include skeleton;
+      }
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-top: 0;
+      margin-bottom: 0;
+
+      &:empty {
+        width: 50%;
+        height: 1.6rem;
+      }
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 100;
+
+      &:empty {
+        width: 25%;
+        height: 1rem;
+      }
+    }
+
+    .gallery {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      padding: 0 2rem;
+      width: 100%;
+      max-width: 100%;
+
+      img {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0.25rem;
+      }
+    }
+
+    .splide {
+      .splide__pagination {
+        bottom: -2rem;
+
+        .splide__pagination__page.is-active {
+          background: #111;
+        }
+      }
+    }
+
+    .gallery.single {
+      margin-bottom: 0;
+
+      .splide {
+        .splide__pagination {
+          display: none;
+        }
+      }
+    }
+
+    [data-skeleton="image"] {
+      img {
+        width: 100%;
+        border-radius: 0.25rem;
+      }
+
+      &:empty {
+        width: calc(100% - 4rem);
+        padding-top: calc(100% - 4rem);
+        position: relative;
+        margin: 2rem auto 0;
+
+        @include skeleton_img;
+      }
+    }
+  }
+
+  aside {
+    padding: 0;
+
+    & > form {
+      padding: 0 2rem;
+
+      & > button,
+      & > label.btn {
+        @include button;
+        background-color: $red;
+
+        &:disabled {
+          opacity: 0.3;
+        }
+      }
+    }
+
+    & > .info {
+      margin: 2rem 0;
+      border-top: 1px solid #ddd;
+      padding: 0 2rem;
+
+      & > h3 {
+        font-weight: 400;
+        font-size: 1.4rem;
+      }
+
+      [data-description] {
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+    }
+  }
+}

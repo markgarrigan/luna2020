@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--gelo _head.html -->
+  <script src="/static/js/success.js" defer></script>
+  <title>Thanks! - Luna Cafe</title>
+</head>
+
+<body class="success" data-controller="store success">
+  <!--gelo _nav.html-->
+  <main data-target="success.main">
+    <div class="spinner"></div>
+    <div class="thanks">
+      <h1>Thank You!</h1>
+      <div class="success-checkmark">
+        <div class="check-icon show">
+          <span class="icon-line line-tip"></span>
+          <span class="icon-line line-long"></span>
+          <div class="icon-circle"></div>
+          <div class="icon-fix"></div>
+        </div>
+      </div>
+      <h3 class="rubik">Your order has been placed.</h3>
+      <p>We'll send an email to <span data-target="success.email"></span> with all the details.</p>
+
+      <div class="shop">
+        <a class="btn" href="/">Continue shopping</a>
+      </div>
+    </div>
+  </main>
+  <!--gelo _footer.html-->

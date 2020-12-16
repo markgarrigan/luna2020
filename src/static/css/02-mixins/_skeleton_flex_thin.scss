@@ -1,0 +1,12 @@
+@mixin skeleton_flex_thin {
+    &:after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+        height: .5rem;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 100vw;
+        animation: inout 1s infinite;
+    }
+}
+

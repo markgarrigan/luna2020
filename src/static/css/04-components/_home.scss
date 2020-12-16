@@ -1,0 +1,221 @@
+.home {
+  main {
+    min-height: 100vw;
+  }
+
+  .splide {
+    margin-bottom: 1rem;
+  }
+
+  .splide__slide {
+    background-color: black;
+  }
+
+  .delivery {
+    position: relative;
+  }
+
+  .season {
+    display: block;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding: 1rem;
+    color: $brown;
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 2.3rem;
+      letter-spacing: 2px;
+
+      & + p {
+        margin: 0;
+      }
+    }
+
+    & > span:last-child {
+      display: block;
+      text-decoration: none;
+      color: $red;
+      margin-top: 0.7rem;
+      font-size: 1.2rem;
+      font-weight: 300;
+
+      &:after {
+        content: "\003E";
+        padding: 0 0 0 0.3rem;
+        font-size: 1rem;
+        color: $red;
+      }
+    }
+  }
+
+  .winter {
+    background-image: url(http://luna-cafe.imgix.net/seasons/winter-bg.jpg?w=500&q=20);
+    background-position: top center;
+    background-size: 150%;
+    padding-bottom: 298px;
+
+    h2 {
+      img {
+        width: 38px;
+        display: inline-block;
+      }
+    }
+  }
+
+  .spring {
+    background-image: url(http://luna-cafe.imgix.net/seasons/spring-bg4.jpg?w=500&q=20);
+    background-position: top center;
+    background-size: 103%;
+    padding: 1rem 1rem 375px 1rem;
+
+    h2 {
+      margin-bottom: 0;
+      color: $white;
+      font-size: 2rem;
+
+      img {
+        height: 1.6rem;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    p {
+      color: white;
+    }
+
+    & > span:last-child {
+      color: $yellow;
+
+      &:after {
+        color: $yellow;
+      }
+    }
+  }
+
+  .summer {
+    background-image: url(http://luna-cafe.imgix.net/seasons/summer-bg2.jpg?w=500&q=20);
+    background-position: top center;
+    background-size: 130%;
+    padding: 1rem 1rem 375px 1rem;
+
+    h2 {
+      margin-bottom: 0;
+      color: $white;
+      font-size: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        height: 2.5rem;
+        display: inline-block;
+        margin-right: 0.5rem;
+      }
+    }
+
+    p {
+      color: white;
+    }
+
+    & > span:last-child {
+      color: $red;
+      margin-top: 0;
+
+      &:after {
+        color: $red;
+      }
+    }
+  }
+
+  .autumn {
+    background-image: url(http://luna-cafe.imgix.net/seasons/autumn-bg.jpg?w=500&q=20);
+    background-position: top center;
+    background-size: 112%;
+    padding: 1rem 1rem 280px 1rem;
+
+    h2 {
+      margin-bottom: 0;
+      color: $white;
+      font-size: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        height: 2.5rem;
+        display: inline-block;
+        margin-right: 0.5rem;
+      }
+    }
+
+    p {
+      color: white;
+    }
+
+    & > span:last-child {
+      color: $yellow;
+
+      &:after {
+        color: $yellow;
+      }
+    }
+  }
+
+  .seasons {
+    // display: flex;
+    // justify-content: space-between;
+    // flex-wrap: wrap;
+    padding: 1rem;
+    background-color: rgba($creme, 0.25);
+
+    a {
+      text-decoration: none;
+      display: flex;
+      // width: calc(50% - 0.5rem);
+
+      // &:nth-child(1),
+      // &:nth-child(2) {
+      //   margin-bottom: 1rem;
+      // }
+
+      img {
+        width: 25%;
+        border-radius: 0.3rem;
+      }
+
+      & > span {
+        display: block;
+        width: 75%;
+        padding: 0 0 0 1rem;
+        display: block;
+        strong {
+          display: block;
+          font-size: 1.2rem;
+        }
+
+        span {
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    p {
+      margin-bottom: 2rem;
+      &:nth-child(even) {
+        a {
+          flex-direction: row-reverse;
+
+          & > span {
+            padding: 0 1rem 0 0;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

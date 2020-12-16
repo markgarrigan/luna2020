@@ -1,0 +1,11 @@
+@mixin skeleton_flex {
+    &:after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+        height: 1.3rem;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 100vw;
+        animation: inout 1s infinite;
+    }
+}

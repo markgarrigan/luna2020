@@ -1,0 +1,69 @@
+<!--gelomold
+  {
+    "collection": "folders",
+    "data": "category.js"
+  }
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--gelo /_head.html -->
+  <title><%= name %> - Luna Cafe</title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.12/dist/css/splide.min.css">
+</head>
+
+<body class="category" data-controller="store">
+  <!--gelo /_nav.html-->
+  <div>
+    <header class="image">
+      <h1><%= name %></h1>
+    </header>
+    <div class="dropdown">
+      <input type="checkbox" id="sub-dropdown" data-action="load@window->store#hideme">
+      <label for="sub-dropdown">
+        <span><%= name %></span>
+        <span class="arrow next"></span>
+      </label>
+      <div id="subCategories">
+        <ul>
+          <li>
+            <span><%= name %></span>
+            <label for="sub-dropdown" class="close"></label>
+          </li>
+          <% children.forEach(function(child){ %>
+          <li>
+            <a href="/<%= slug %>/<%= child.slug %>"><%= child.name %></a>
+          </li>
+          <% }); %>
+          <li data-keep>
+            <a class="all-link" href="">All</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <main>
+      <% products.forEach(function(product){ %>
+      <a href="<%= '/products/' + product.slug %>">
+        <div data-image>
+          <img src="<%= product.images.grid.url %>" alt="">
+        </div>
+        <div data-name><%= product.name %></div>
+        <div data-price><%= product.price %></div>
+      </a>
+      <% }); %>
+    </main>
+  </div>
+  <script>
+    const formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2
+    })
+    const priceEls = [...document.querySelectorAll('[data-price]')]
+    priceEls.forEach(el => {
+      el.textContent = formatter.format(el.textContent / 100)
+    })
+  </script>
+  <!--gelo _footer.html-->

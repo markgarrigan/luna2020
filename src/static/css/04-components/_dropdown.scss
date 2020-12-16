@@ -1,0 +1,166 @@
+.dropdown {
+  input {
+    display: none;
+  }
+
+  & > label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    background: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+
+    [data-skeleton]:empty {
+      width: 8rem;
+      height: 1rem;
+
+      @include skeleton;
+    }
+  }
+
+  & > div {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+    .close {
+      position: relative;
+      width: 1.8rem;
+      height: 1.8rem;
+
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 1px;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+
+      &:after {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+    }
+
+    .popup {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+      left: 1rem;
+      border-radius: 0.8rem;
+      background: white;
+      padding: 1rem;
+      z-index: 1;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+
+      h3 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 0;
+        font-weight: 400;
+      }
+
+      .options {
+        flex: 1;
+        margin-bottom: 1rem;
+        overflow: auto;
+        overscroll-behavior-y: contain;
+
+        label {
+          display: block;
+          margin-bottom: 1.3rem;
+
+          span {
+            display: block;
+            margin-bottom: 0.3rem;
+          }
+        }
+      }
+
+      .add {
+        button {
+          @include button;
+          background-color: $red;
+          margin-bottom: 0;
+
+          &:disabled {
+            opacity: 0.3;
+          }
+        }
+      }
+    }
+
+    ul {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+      left: 1rem;
+      border-radius: 0.8rem;
+      background: white;
+      padding: 1rem;
+      z-index: 1;
+      margin: 0;
+
+      li {
+        list-style-type: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        padding: 0;
+
+        a {
+          display: block;
+          text-decoration: none;
+          padding: 0.8rem 0.5rem;
+          color: rgba(0, 0, 0, 0.8);
+
+          &.active {
+            opacity: 0.3;
+          }
+        }
+
+        &:first-child {
+          border-bottom: 0;
+          margin-left: 0;
+          margin-right: 0;
+          margin-bottom: 1rem;
+          padding: 0.5rem;
+          font-size: 1.3rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
+
+    &:before {
+      content: "";
+      background: rgba(0, 0, 0, 0.8);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+    }
+  }
+
+  input:checked {
+    & ~ div {
+      display: block;
+    }
+  }
+}

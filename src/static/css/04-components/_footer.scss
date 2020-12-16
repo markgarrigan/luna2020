@@ -1,0 +1,68 @@
+footer {
+  background-color: $brown;
+  min-height: 3rem;
+  padding: 1.2rem 0;
+
+  & .logo {
+    width: 100%;
+    max-width: 90px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    align-items: center;
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.8rem;
+
+      li {
+        a {
+          color: $yellow;
+          text-decoration: none;
+          padding: 0.2rem 0;
+          display: block;
+        }
+      }
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+
+  .social {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1.2rem;
+
+    span {
+      margin: 0.5rem;
+      width: 24px;
+
+      svg {
+        width: 100%;
+        fill: $white;
+      }
+    }
+  }
+
+  & > p {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    color: $white;
+
+    &:last-child {
+      margin-top: 1.2rem;
+      margin-bottom: 0;
+    }
+  }
+}

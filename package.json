@@ -1,0 +1,25 @@
+{
+  "name": "lunacafe.com",
+  "version": "4.0.0",
+  "description": "Luna Cafe's website.",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "faunadb": "^4.0.0",
+    "gelo": "^0.7.1",
+    "stimulus": "^2.0.0",
+    "stripe": "^8.128.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "gelo build",
+    "start": "gelo",
+    "serve": "npx http-server dist"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

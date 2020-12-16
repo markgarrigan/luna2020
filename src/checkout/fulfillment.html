@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--gelo /_head.html -->
+  <title>Checkout Options - Luna Cafe</title>
+  <script src="/static/js/checkout.js" defer></script>
+</head>
+
+<body class="checkout" data-controller="checkout">
+  <header>
+    <div class="bar">
+      <a href="/basket">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-left" width="36"
+          height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#502d1e" fill="none" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <line x1="5" y1="12" x2="9" y2="16" />
+          <line x1="5" y1="12" x2="9" y2="8" />
+        </svg>
+        <img src="/static/files/logo.svg" alt="">
+      </a>
+    </div>
+  </header>
+  <main>
+    <!-- <h1 class="rubik">How would you like to get your order?</h1> -->
+    <h1 class="rubik">What zip code will we deliver your order to?</h1>
+    <!-- <div class="buttongroup">
+      <span>I'd like it delivered</span>
+      <span>I'll pick it up</span>
+    </div> -->
+    <div class="deliversto">
+      <p>
+        Delivers to: <span data-target="checkout.postal" data-action="click->checkout#showPostaled">-----</span>
+      </p>
+      <label data-target="checkout.intakePostal">
+        <span class="hint">Zip Code</span>
+        <input data-target="checkout.postaled">
+        <button data-action="checkout#validatePostal"><span>Apply</span></button>
+        <a href="#" data-action="checkout#cancelPostal">Cancel</a>
+      </label>
+      <span class="error" data-target="checkout.postalError"></span>
+    </div>
+
+    <h3 class="rubik">Select your delivery method:</h3>
+
+    <div class="delivery" data-target="checkout.shipping" data-action="click->checkout#selectShipping"
+      data-ship="local">
+      <div>
+        <strong>Delivers in 1 to 3 days</strong>
+        <span>Local Delivery</span>
+      </div>
+      <span>FREE</span>
+    </div>
+
+    <div class="delivery" data-target="checkout.shipping" data-action="click->checkout#selectShipping"
+      data-ship="standard">
+      <div>
+        <strong>Delivers in 3 to 5 days</strong>
+        <span>Standard Delivery</span>
+      </div>
+      <span>$7.00</span>
+    </div>
+
+    <div class="delivery" data-target="checkout.shipping" data-action="click->checkout#selectShipping"
+      data-ship="express">
+      <div>
+        <strong>Delivers in 1 to 3 days</strong>
+        <span>Express Delivery</span>
+      </div>
+      <span>$25.00</span>
+    </div>
+
+    <div class="continue">
+      <h4 class="rubik">Next: Shipping address and Payment</h4>
+      <!-- <h4 class="rubik">Next: Pickup Details</h4> -->
+      <button class="btn" disabled data-target="checkout.continue" data-action="checkout#continue">
+        <span>Continue</span>
+      </button>
+    </div>
+
+    <div class="help">
+      <h4 class="rubik">Need some help? Email us or call 920-222-4444</h4>
+    </div>
+
+    <div class="footnotes">
+      <small>^ We approximate your location from your internet IP address by matching it to a geographic region or from
+        the location entered during your previous visit to Luna Cafe.</small>
+    </div>
+  </main>
+  <!--gelo /_footer.html-->

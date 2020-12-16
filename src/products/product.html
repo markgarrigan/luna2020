@@ -1,0 +1,115 @@
+<!--gelomold
+  {
+    "collection": true,
+    "data": "product.js"
+  }
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.12/dist/css/splide.min.css">
+  <!--gelo /_head.html -->
+  <title><%= name %> - Luna Cafe</title>
+  <meta name="description" content="">
+  <script src="/static/js/products.js" defer></script>
+</head>
+
+<body class="product moonpie" data-controller="store">
+  <!--gelo /_nav.html-->
+  <div>
+    <main>
+      <% if (attributes && attributes.crumbs) { %>
+      <div class="crumbs">
+        <%- attributes.crumbs %>
+      </div>
+      <% } %>
+      <h1><%= name %></h1>
+      <h2 data-price><%= price %></h2>
+      <% if (images && images.gallery && images.gallery.length ) { %>
+      <div class="gallery <% if (images.gallery.length == 1) { %>single<% } %>">
+        <div class="splide" data-splide='{"arrows":false,"heightRatio": 1, "width": "100%", "gap": "1rem"}'>
+          <div class="splide__track">
+            <ul class="splide__list">
+              <% images.gallery.forEach(function(image){ %>
+              <li class="splide__slide">
+                <img src="<%= image.small_url %>" alt="">
+              </li>
+              <% }); %>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </main>
+    <aside data-controller="product">
+      <form data-action="product#add">
+        <input type="hidden" data-target="product.slug" value="<%= slug %>" />
+        <input type="hidden" data-target="product.price" value="<%= price %>">
+        <input type="hidden" data-target="product.name" value="<%= name %>">
+        <input type="hidden" data-target="product.image" value="<%= images.thumb.url %>">
+        <input type="hidden" data-target="product.tiny" value="<%= images.tiny.url %>">
+        <input type="hidden" data-target="product.url" value="/products/<%= slug %>">
+        <% if (!options.length) { %>
+        <button type="submit" data-target="product.submit">Add to Basket</button>
+        <% } %>
+        <% if (options.length) { %>
+        <label class="btn" for="opts-dropdown">
+          Add to Basket
+        </label>
+        <div class="dropdown">
+          <input type="checkbox" id="opts-dropdown">
+          <div>
+            <div class="popup">
+              <h3>
+                <span>Choose Options</span>
+                <label for="opts-dropdown" class="close"></label>
+              </h3>
+              <div class="options">
+                <% options.forEach(function(option){ %>
+                <% if (option.active) { %>
+                <label>
+                  <span><%= option.name %></span>
+                  <% if (option.input_type == 'select') { %>
+                  <select data-target="product.options" data-name="<%= option.name %>">
+                    <% option.values.forEach(function(value) { %>
+                    <option value="<%= value.name %>" <% if (value.default) { %>selected="selected" <% } %>>
+                      <%= value.name %>
+                    </option>
+                    <% }); %>
+                  </select>
+                  <% } %>
+                </label>
+                <% } %>
+                <% }); %>
+              </div>
+              <div class="add">
+                <button type="submit" data-target="product.submit">Add to Basket</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </form>
+      <div class="info">
+        <h3>Product Info</h3>
+        <div><%- description %></div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+
+  <script>
+    new Splide('.splide').mount();
+    const formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2
+    })
+    const priceEls = [...document.querySelectorAll('[data-price]')]
+    priceEls.forEach(el => {
+      el.textContent = formatter.format(el.textContent / 100)
+    })
+  </script>
+  <!--gelo /_footer.html-->

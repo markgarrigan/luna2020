@@ -1,0 +1,8 @@
+[data-if] {
+    display: none;
+
+    &.show {
+        display: block;
+        display: initial;
+    }
+}

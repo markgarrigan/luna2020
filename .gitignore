@@ -1,0 +1,8 @@
+luna.loc-key.pem
+luna.loc.pem
+.env
+.vercel
+fauna.json
+.faunarc
+node_modules
+dist

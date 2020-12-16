@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--gelo _head.html -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.12/dist/css/splide.min.css">
+  <title>Luna Cafe</title>
+</head>
+
+<body class="home" data-controller="store">
+  <!--gelo _nav.html-->
+  <main>
+    <div class="splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <img src="http://luna-cafe.imgix.net/home/bw/Roaster.jpg?w=600&q=10&fit=crop&ar=1:1">
+          </li>
+          <li class="splide__slide">
+            <img
+              src="http://luna-cafe.imgix.net/home/bw/Luna-facade.jpg?w=500&h=600&fit=crop&crop=focalpoint&fp-x=.42&fp-y=.5&fp-z=1.1&q=20"
+              alt="">
+          </li>
+          <li class="splide__slide">
+            <img src="http://luna-cafe.imgix.net/home/bw/Probat-Roaster.jpg?w=600&q=10&fit=crop&ar=1:1"
+              alt="Probat Roaster">
+          </li>
+          <li class="splide__slide">
+            <img src="http://luna-cafe.imgix.net/home/bw/Brotzmann-jazz.jpg?w=600&q=10&fit=crop&ar=1:1"
+              alt="Brotzmann Jazz">
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <a href="" class="season winter">
+      <h2>
+        <img src="/static/files/logo.svg" alt="Luna">
+        Giving Back
+      </h2>
+      <p>Every little bit helps.</p>
+      <span>Learn more</span>
+    </a>
+
+    <a href="" class="season spring">
+      <h2>
+        <img src="/static/files/logo.svg" alt="Luna">
+        Fundraising
+      </h2>
+      <p>Help us help you.</p>
+      <span>Learn more</span>
+    </a>
+
+    <a href="" class="season summer">
+      <h2>
+        <img src="/static/files/logo.svg" alt="Luna">
+        20 Years
+      </h2>
+      <span>Our letter to you</span>
+    </a>
+
+    <a href="" class="season autumn">
+      <h2>
+        <img src="/static/files/logo.svg" alt="Luna">
+        Rent
+      </h2>
+      <p>Our space for your needs.</p>
+      <span>Learn more</span>
+    </a>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+
+  <script>
+    new Splide('.splide', {
+      type: 'fade',
+      rewind: true,
+      autoplay: true,
+      arrows: false,
+      pagination: false,
+      heightRatio: 1,
+      cover: true,
+      interval: 8000,
+      pauseOnHover: false,
+      speed: 800
+    }).mount();
+  </script>
+
+  <!--gelo _footer.html-->
