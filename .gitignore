@@ -5,6 +5,5 @@ luna.loc.pem
 fauna.json
 .faunarc
 node_modules
-dist
 # Local Netlify folder
 .netlify
